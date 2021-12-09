@@ -49,3 +49,10 @@ it('simulates game with winner', () => {
     console.log(wrapper.debug());
     expect(winnerStatus).toEqual('Winner: X')
 });
+
+it('resets game to start', () => {
+    const goToStart = wrapper.find('button.goBack');
+    const moves = wrapper.find('li').key();
+    goToStart.simulate('click');
+    expect(moves).toEqual(0);
+});
