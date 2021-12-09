@@ -56,3 +56,10 @@ it('resets game to start', () => {
     goToStart.simulate('click');
     expect(moves).toEqual("0");
 });
+
+it('go back to previous move', () => {
+    const goBack = wrapper.find('button.goBack');
+    const moves = wrapper.find('li').key();
+    goBack.simulate('click');
+    expect(moves > 0).toBeTruthy();
+});
