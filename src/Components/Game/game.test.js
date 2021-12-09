@@ -59,7 +59,10 @@ it('resets game to start', () => {
 
 it('go back to previous move', () => {
     const goBack = wrapper.find('button.goBack');
-    const moves = wrapper.find('li').key();
+    const turnOne = wrapper.find('button.square').at(0);
+    turnOne.simulate('click');
     goBack.simulate('click');
-    expect(moves > 0).toBeTruthy();
+    const goBackText = wrapper.find('li').last().text();
+
+    expect(goBackText).toEqual("Go to move #1");
 });
