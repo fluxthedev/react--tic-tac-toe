@@ -20,5 +20,5 @@ it('renders game status for second playerr', () => {
     const button = wrapper.find('button.square').first();
     button.simulate('click');
     const secondPlayer = wrapper.find('div.game-info').children().first().text();
-    expect(secondPlayer).toEqual('Next player: 0');
+    expect(secondPlayer).toEqual('Next player: O');
 });
