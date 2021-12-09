@@ -17,13 +17,16 @@ it('renders game status for first player', () => {
 });
 
 it('renders game status for second player', () => {
-    const button = wrapper.find('button.square').first();
+    const button = wrapper.find('button.square').at(0);
     button.simulate('click');
     const secondPlayer = wrapper.find('div.game-info').children().first().text();
     expect(secondPlayer).toEqual('Next player: O');
 });
 
 it('simulates game with winner', () => {
+    const turnOne = wrapper.find('button.square').at(0);
+    turnOne.simulate('click');
+
     const turnTwo = wrapper.find('button.square').at(2);
     turnTwo.simulate('click');
 
@@ -43,5 +46,6 @@ it('simulates game with winner', () => {
     turnSeven.simulate('click');
 
     const winnerStatus = wrapper.find('div.game-info').children().first().text();
-    expect(winnerStatus).toEqual('Winner: X');
+    console.log(wrapper.debug());
+    expect(winnerStatus).toEqual('Winner: X')
 });
