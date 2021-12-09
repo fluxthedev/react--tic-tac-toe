@@ -1,9 +1,16 @@
 import React from "react";
 
-const Game = () => {
-    return (
-        <div className="game"></div>
-    );
-}
+export default class Game extends React.Component {
+    render() {
 
-export default Game;
+        let status;
+        status = "Next player: X";
+        return (
+            <div className="game">
+                <div className="game-info">
+                    <div>{status}</div>
+                </div>
+            </div>
+        );
+    }
+}
