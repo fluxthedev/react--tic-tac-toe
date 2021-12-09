@@ -71,14 +71,18 @@ export default class Game extends React.Component {
         const winner = calculateWinner(current.squares);
 
         const moves = history.map((step, move) => {
-            const desc = 'Go to game start';
+            const desc = move ? 
+                'Go to move #' + move :
+                'Go to game start';
 
             return (
                 <li key={move}>
                     <button className="goBack" onClick={() => this.jumpTo(move)}>{desc}</button>
                 </li>
             );
-        })
+        });
+        let element = document.getElementsByTagName("li");
+        console.log(element);
 
         let status;
 
