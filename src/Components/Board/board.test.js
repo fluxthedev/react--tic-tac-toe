@@ -9,8 +9,8 @@ it('Renders board with squares without crashing', () => {
 
 it('triggers onClick event when board square is clicked', () =>{
     let squares = Array(9).fill(null)
-    const onClick = jest.fn();
+    const onClick = jest.fn().mockName("onClick");
     let wrapper = mount(<Board squares={squares} onClick={onClick}/>);
     wrapper.find('button.square').first().simulate('click');
-    expect(onClick).toBeCalledWith(0)
+    expect(onClick).toBeCalledWith(0);
 })
