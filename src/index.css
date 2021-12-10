@@ -15,6 +15,21 @@ body {
   background: #313131;
 }
 
+.game {
+  position: absolute;
+  top: 5rem;
+}
+
+.game-board, 
+.game-info {
+  display: inline-block;
+}
+
+.game-info {
+  vertical-align: top;
+  padding-left: 2rem;
+}
+
 .square {
   height: 200px;
   width: 200px;
