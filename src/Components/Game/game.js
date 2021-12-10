@@ -81,8 +81,6 @@ export default class Game extends React.Component {
                 </li>
             );
         });
-        let element = document.getElementsByTagName("li");
-        console.log(element);
 
         let status;
 
