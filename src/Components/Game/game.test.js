@@ -95,5 +95,5 @@ it('simulate draw', () => {
     turnNine.simulate('click');
 
     const drawStatus = wrapper.find('div.game-info').children().first().text();
-    expect(drawStatus).toEqual('Draw');
+    expect(drawStatus).toEqual('Winner: Draw');
 });
