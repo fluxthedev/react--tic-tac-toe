@@ -46,7 +46,6 @@ it('simulates game with winner', () => {
     turnSeven.simulate('click');
 
     const winnerStatus = wrapper.find('div.game-info').children().first().text();
-    console.log(wrapper.debug());
     expect(winnerStatus).toEqual('Winner: X')
 });
 
@@ -65,4 +64,36 @@ it('go back to previous move', () => {
     const goBackText = wrapper.find('li').last().text();
 
     expect(goBackText).toEqual("Go to move #1");
+});
+
+it('simulate draw', () => {
+    const turnOne = wrapper.find('button.square').at(0);
+    turnOne.simulate('click');
+
+    const turnTwo = wrapper.find('button.square').at(4);
+    turnTwo.simulate('click');
+
+    const turnThree = wrapper.find('button.square').at(2);
+    turnThree.simulate('click');
+
+    const turnFour = wrapper.find('button.square').at(1);
+    turnFour.simulate('click');
+
+    const turnFive = wrapper.find('button.square').at(7);
+    turnFive.simulate('click');
+
+    const turnSix = wrapper.find('button.square').at(3);
+    turnSix.simulate('click');
+
+    const turnSeven = wrapper.find('button.square').at(5);
+    turnSeven.simulate('click');
+
+    const turnEight = wrapper.find('button.square').at(8);
+    turnEight.simulate('click');
+
+    const turnNine = wrapper.find('button.square').at(6);
+    turnNine.simulate('click');
+
+    const drawStatus = wrapper.find('div.game-info').children().first().text();
+    expect(drawStatus).toEqual('Draw');
 });
