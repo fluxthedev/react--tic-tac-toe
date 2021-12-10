@@ -44,7 +44,7 @@ body {
   background: rgba(0,0,0,0);
   border: 0;
   color: white;
-  font-size: 11rem;
+  font-size: 10.4vw;
   cursor: pointer;
 }
 
@@ -103,6 +103,7 @@ ol > li > button {
   .square {
     height: 150px;
     width: 150px;
+    font-size: 20vw;
   }
 }
 
