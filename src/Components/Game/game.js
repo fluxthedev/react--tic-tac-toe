@@ -17,6 +17,8 @@ const calculateWinner = (squares) => {
         const [a, b, c] = lines[line];
         if ((squares[a] && squares[a] === squares[b]) && (squares[a] === squares[c])) {
             return squares[a];
+        } else if(!squares.includes(null)){
+            return 'Draw';
         }
     }
     return null;
@@ -84,10 +86,14 @@ export default class Game extends React.Component {
 
         let status;
 
-        if (winner) {
-            status = "Winner: " + winner;
+        if (winner && winner !== 'draw'){
+            status = 'Winner: ' + winner;
+            console.log("in winner");
+        } else if (winner && winner === 'draw'){
+            status = "It's a " + winner;
+            console.log("in draw");
         } else {
-            status = "Next player: " + (this.state.xIsNext ? "X" : "O");
+            status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
         }
 
         return (
