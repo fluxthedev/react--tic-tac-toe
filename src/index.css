@@ -10,7 +10,7 @@ body {
   display: flex;
   justify-content: center;
   width: 100vw;
-  height: 100vw;
+  height: 100vh;
   align-items: center;
   background: #313131;
 }
@@ -27,7 +27,14 @@ body {
 
 .game-info {
   vertical-align: top;
-  padding-left: 2rem;
+  margin-left: 2rem;
+  padding-left: 1rem;
+  border-left: 2px solid #8e8e8e;
+}
+
+.game-info > div {
+  color: white;
+  font-size: 32px;
 }
 
 .square {
@@ -64,4 +71,60 @@ body {
 
 .board-row:nth-child(3) > .square:last-child {
   border-left: 4px solid white;
+}
+
+ol {
+  color: white;
+  font-size: 1.25rem;
+  padding-left: 1.25rem;
+}
+
+ol > li {
+  margin-bottom: 15px;
+}
+
+ol > li > button {
+  cursor: pointer;
+  background: white;
+  color: #313131;
+  border: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 5px 10px;
+  width: 100%;
+  margin-left: 5px;
+}
+
+@media screen and (max-width: 992px) {
+  #root {
+    height: 600px;
+    min-height: 600px;
+  }
+  .square {
+    height: 150px;
+    width: 150px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #root {
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  .game-board, 
+  .game-info {
+    display: block;
+  }
+
+  .game-info {
+    margin: 1.5rem 0 0 0;
+    border-left: 0;
+    padding: 0;
+  }
+
+  .square {
+    height: 100px;
+    width: 100px;
+  }
 }
