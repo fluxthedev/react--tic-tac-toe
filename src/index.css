@@ -6,17 +6,47 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-#root > .game {
+#root {
   display: flex;
   justify-content: center;
   width: 100vw;
   height: 100vw;
   align-items: center;
-  background: #424242;
+  background: #313131;
 }
 
-.board {
-  width: 35%;
-  height: 35%;
-  display: flex;
+.square {
+  height: 200px;
+  width: 200px;
+  vertical-align: top;
+  background: rgba(0,0,0,0);
+  border: 0;
+  color: white;
+  font-size: 11rem;
+  cursor: pointer;
+}
+
+.board-row:first-child > .square:first-child,
+.board-row:nth-child(2) > .square:first-child {
+  border-bottom: 4px solid white;
+  border-right: 4px solid white;
+}
+
+.board-row:first-child > .square:nth-child(2),
+.board-row:nth-child(2) > .square:nth-child(2) {
+  border-bottom: 4px solid white;
+}
+
+.board-row:first-child > .square:last-child,
+.board-row:nth-child(2) > .square:last-child {
+  border-bottom: 4px solid white;
+  border-left: 4px solid white;
+}
+
+.board-row:nth-child(3) > .square:first-child {
+  border-right: 4px solid white;
+}
+
+.board-row:nth-child(3) > .square:last-child {
+  border-left: 4px solid white;
 }
