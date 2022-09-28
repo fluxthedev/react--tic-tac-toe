@@ -45,9 +45,15 @@ const Game = () => {
         setXIsNext(!xIsNext);
     }
 
-    const jumpTo = (step)  => {
-        setStepNumber(step);
-        setXIsNext((step % 2) === 0);
+    const jumpTo = (move)  => {
+        let currentHistory = [];
+        for (let i = 0; i <= move; i++) {
+            currentHistory.push(history[i]);
+        }
+
+        setHistory(currentHistory);
+        setStepNumber(move);
+        setXIsNext((move % 2) === 0);
     }
 
     // Variables
