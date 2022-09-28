@@ -95,6 +95,12 @@ ol > li > button {
   margin-left: 5px;
 }
 
+@media screen and (min-width: 1500px) {
+  .square {
+    font-size: 140px;
+  }
+}
+
 @media screen and (max-width: 992px) {
   #root {
     height: 600px;
